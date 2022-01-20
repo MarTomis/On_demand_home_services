@@ -4,10 +4,11 @@
       <router-link to="/" class="navbar-brand">
         <img
           src="@/assets/tools.svg"
-          height="40"
+          height="30"
           class="d-inline-block align-top"
           alt=""
           loading="lazy"
+          padding="10px"
         />
       </router-link>
       <button
@@ -118,6 +119,10 @@ export default {
 #nav {
   padding: 30px;
   background-color: #3aafa9;
+
+  .navbar-brand{
+    padding: 5px;
+  }
 
   a {
     font-weight: bold;
