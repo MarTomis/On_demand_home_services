@@ -104,10 +104,12 @@ export default {
 #search-form {
   margin-right: 5px;
   color: #ffffff;
+  padding-top: 5px;
 }
 
 #search {
   font-weight: bold;
+  color:#ffffff;
   background-color: #1e7975;
   border-radius: 90px;
 
@@ -122,6 +124,10 @@ export default {
 
   .navbar-brand{
     padding: 5px;
+  }
+
+  .navbar-toggler{
+    padding-top:5px;
   }
 
   a {

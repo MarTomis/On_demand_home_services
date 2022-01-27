@@ -48,4 +48,10 @@
   text-align: center;
   color: #2c3e50;
 }
+
+.btn{
+  	margin-top: 6px;
+    margin-bottom: 6px;
+}
+
 </style>

@@ -28,7 +28,7 @@
                 placeholder="Password"
               />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
         <div class="col-sm"></div>
@@ -47,5 +47,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+.btn{
+  	margin-top: 6px;
+    margin-bottom: 6px;
 }
 </style>
