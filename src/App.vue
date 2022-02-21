@@ -104,7 +104,8 @@ export default {
 #search-form {
   margin-right: 5px;
   color: #ffffff;
-  padding-top: 5px;
+  padding-top: 1px;
+  height: 40px;
 }
 
 #search {

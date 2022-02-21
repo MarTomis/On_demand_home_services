@@ -10,6 +10,7 @@
               <label for="exampleInputEmail1">Email address</label>
               <input
                 type="email"
+                v-model="username"
                 class="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
@@ -22,13 +23,21 @@
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input
+                v-model="password"
                 type="password"
                 class="form-control"
                 id="exampleInputPassword1"
                 placeholder="Password"
               />
             </div>
-            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+            <button
+              id="submit"
+              type="button"
+              @click="login()"
+              class="btn btn-primary"
+            >
+              Submit
+            </button>
           </form>
         </div>
         <div class="col-sm"></div>
@@ -37,7 +46,36 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import firebase from "@/firebase";
+
+export default {
+  name: "login",
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    login() {
+      console.log("login..." + this.username);
+      let that = this;
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.username, this.password)
+        .then((result) => {
+          console.log("login successful", result);
+
+          this.$router.replace({ name: "Home"});
+        })
+        .catch(function(error){
+          console.error("error", error);
+        });
+    },
+  },
+};
+</script>
 
 <style scoped>
 #app {
@@ -48,8 +86,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-.btn{
-  	margin-top: 6px;
-    margin-bottom: 6px;
+.btn {
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 </style>
